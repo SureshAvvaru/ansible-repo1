@@ -1,0 +1,17 @@
+---
+- hosts: 172.31.33.230
+  become: yes
+  become_method: sudo
+  #become_user: ansible
+
+  tasks:
+    - name: Installing multiple packages
+      yum: name={{ item }} state=latest
+ 
+      with_items:
+        - httpd
+        - telnet
+        - MySQL-python
+
+    - name: Running Apache Service
+      service: name=httpd state=started
