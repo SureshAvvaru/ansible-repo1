@@ -1,0 +1,18 @@
+---
+- hosts: 172.31.33.230
+  become: yes
+
+  tasks:
+     - name: Creating multiple users
+       user:
+           name: "{{ item }}"
+           password: $1$QNJ0CCbG$X/XL5dtKo70MnoTCW/vrE.
+           state: present
+           shell: /bin/bash
+           system: no
+           createhome: yes
+           home: /home/ "{{ item }}"
+
+       with_items:
+          - user_11
+          - user_22

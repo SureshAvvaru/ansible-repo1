@@ -1,0 +1,49 @@
+---
+- hosts: 172.31.33.230
+  become: true
+  become_method: sudo
+
+  tasks:
+    - name: creating users with tags
+      user: 
+        name: user1
+        password: 1234
+        state: present
+        shell: /bin/bash
+        system: no
+        createhome: yes
+        home: /home/user1
+   
+    - name: creating users2
+      user:
+        name: user2
+        password: 1234
+        state: present
+        shell: /bin/bash
+        system: no
+        createhome: yes
+        home: /home/user2
+    
+    - name: creating users3
+      user:
+        name: user3
+        password: 1234
+        state: present
+        shell: /bin/bash
+        system: no
+        createhome: yes
+        home: /home/user3
+      tags:
+        - user3
+
+    - name: creating users4
+      user:
+        name: user4
+        password: 1234
+        state: present
+        shell: /bin/bash
+        system: no
+        createhome: yes
+        home: /home/user4
+      tags:
+        - user4

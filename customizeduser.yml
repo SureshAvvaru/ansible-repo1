@@ -1,0 +1,15 @@
+---
+- hosts: 172.31.33.230
+  become: yes
+  gather_facts: false
+  
+  tasks:
+     - name: Creating a user with customized path
+       user:
+         name: customuser
+         password: $1$iOHbObrJ$omAXIzzP2bXhLDYgVr5x21
+         state: present
+         shell: /bin/bash
+         system: no
+         createhome: yes
+         home: /custom/customuser

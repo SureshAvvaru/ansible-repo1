@@ -1,0 +1,20 @@
+---
+- hosts: 172.31.33.230
+  become: yes
+  become_method: sudo
+  become_user: root 
+  gather_facts: true
+  
+  tasks: 
+     - name: creating user for dev
+       user: 
+         name: dev-user1
+         password: $1$d7NbEkAV$VHX2PGynRnv0KyLUJK37E0
+         state: present
+         shell: /bin/bash
+         system: no
+         createhome: yes
+         home: /home/dev-user1
+
+- import_playbook: nginx.yml
+- import_playbook: customizeduser.yml
