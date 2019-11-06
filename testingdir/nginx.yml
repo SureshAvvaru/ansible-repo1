@@ -1,6 +1,5 @@
 ---
-- hosts: 172.31.33.230
-
+- hosts: 172.31.89.158
   tasks:
     - name: Installing Nginx
       yum: name=nginx state=latest
