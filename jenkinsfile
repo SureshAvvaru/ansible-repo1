@@ -3,7 +3,7 @@ pipeline {
       stages {
          stage('dev playbook') {
             steps {
-          sh 'ansible-playbook testingdir/nginx.yml --become-user root'
+          sh "ansible-playbook testingdir/nginx.yml -k -b"
        }
     }
 }
