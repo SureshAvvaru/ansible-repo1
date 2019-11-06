@@ -2,7 +2,4 @@
 - hosts: 172.31.89.158
   tasks:
     - name: Installing Nginx
-      yum: name=nginx state=latest
-
-    - name: Start Nginx service
-      service: name=nginx state=started
+      yum: name=git state=latest
