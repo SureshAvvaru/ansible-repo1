@@ -1,7 +1,7 @@
 pipeline {
       agent any
       stages {
-         stage ('dev playbook')
+         stage('dev playbook') {
             steps {
           sh "ansible-playbook testingdir/nginx.yml"
        }
