@@ -1,0 +1,15 @@
+peline {
+      agent {
+         node {
+           label 'Node-1'
+         }
+      }
+      
+      stages {
+         stage('dev playbook') {
+            steps {
+            sh "ansible-playbook nginx.yml -b"
+       }
+    }
+  }
+}
