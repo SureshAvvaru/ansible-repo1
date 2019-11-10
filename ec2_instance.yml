@@ -1,0 +1,18 @@
+---
+- name: ec2 Launch
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Launch Ec2 Instance
+      ec2:
+        instance_type: t2.micro
+        key_name: Dev-Server
+        image: ami-0b99a4643928927ce
+        region: us-east-1
+        group: default
+        count: 1
+        vpc_subnet_id: subnet-c28e05fc
+        wait: yes
+        assign_public_ip: yes
+        instance_tags:
+            name: dev-env
