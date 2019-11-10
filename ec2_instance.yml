@@ -7,7 +7,7 @@
       ec2:
         instance_type: t2.micro
         key_name: Dev-Server
-        image: ami-0b99a4643928927ce
+        image: ami-0c322300a1dd5dc79
         region: us-east-1
         group: default
         count: 1
