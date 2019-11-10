@@ -1,6 +1,5 @@
 ---
-- hosts: 172.31.33.230
-  gather_facts: false
+- hosts: 172.31.89.158
   
   tasks:
      - name: Creating a user with customized path
