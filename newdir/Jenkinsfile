@@ -1,12 +1,11 @@
 pipeline {
       agent any
       stages {
-         stage('clone repo'){
          stage('dev playbook') {
             steps {
-            sh "ansible-playbook newdir/multi.yml -b"
-        }
+            sh "ansible-playbook multi.yml -b"
+         }
       }
-    }
-  }
+   }
 }
+
