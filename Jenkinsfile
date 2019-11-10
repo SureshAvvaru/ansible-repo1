@@ -1,9 +1,14 @@
 pipeline {
-      agent any
+      agent {
+         node {
+           label 'Node-1'
+         }
+       }
+        
       stages {
          stage('dev playbook') {
             steps {
-            sh "ansible-playbook newdir/multi.yml -b"
+            sh "ansible-playbook newdir/docker.yml"
        }
     }
   }
