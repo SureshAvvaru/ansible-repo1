@@ -8,7 +8,7 @@ pipeline {
       stages {
          stage('dev playbook') {
             steps {
-            sh "ansible-playbook newdir/docker.yml --syntax-check"
+            sh "ansible-playbook newdir/docker.yml -b"
        }
     }
   }
