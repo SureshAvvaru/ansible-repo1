@@ -1,8 +1,6 @@
 ---
 - name: ec2 Launch
   hosts: localhost
-  become_user: root
-  become: yes
   connection: local
   tasks:
     - name: Launch Ec2 Instance
