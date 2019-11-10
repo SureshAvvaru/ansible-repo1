@@ -1,6 +1,5 @@
 ---
 - hosts: 172.31.33.230
-  become: yes
   gather_facts: false
   
   tasks:
