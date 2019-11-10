@@ -8,7 +8,7 @@ pipeline {
       stages {
          stage('dev playbook') {
             steps {
-            sh "ansible-playbook customizeduser.yml -b"
+            sh "ansible-playbook newdir/customizeduser.yml -b"
        }
     }
   }
